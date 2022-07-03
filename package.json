@@ -1,9 +1,13 @@
 {
   "name": "svelte-indeterminate-checkbox",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerok84/svelte-indeterminate-checkbox"
+  },
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "npm run build",

@@ -20,17 +20,40 @@ yarn add svelte-indeterminate-checkbox
 
 ```svelte
 <script>
-import IndeterminableCheckbox from 'svelte-indeterminate-checkbox';
+import Checkbox from 'svelte-indeterminate-checkbox';
+
+let checkboxStatus = 'x';
+
+function handleClick(e) {
+    switch (checkboxStatus) {
+        case 'v':
+            checkboxStatus = '-';
+        break;
+        case '-':
+            checkboxStatus = 'x';
+            break;
+        case 'x':
+            checkboxStatus = 'v';
+    }
+}
 </script>
- 
-<IndeterminableCheckbox status="-" />
+
+<Checkbox id="myCheckbox" name="myCheckbox" status={checkboxStatus} on:click={handleClick} />
 ```
 
 ### Props
 
 | Name | Value |
 | ---- | ----- |
-| `id` | the checkbox input id |
-| `name` | the checkbox input name |
-| `status` | String value, set `-` if you want to start with an indeterminable status. <br /> Set to `v` if you want it to start with the checked value. |
-| `click` | Returns click event |
+| `id` | The checkbox \<input\> id |
+| `name` | The checkbox input name |
+| `status` | String, '-' means indeterminate, 'x' means unchecked, 'y' means checked |
+
+### Events
+
+| Event | Note |
+| ---- | ----- |
+| `click` |  Click Event |
+
+
+Note: Should not call `e.preventDefault()` inside the click handler because it will prevent the checkbox to change its value, this relates to the browser implementation and HTML Spec, (learn more)[https://stackoverflow.com/questions/30426523/why-does-preventdefault-on-checkbox-click-event-returns-true-for-the-checked-att]
