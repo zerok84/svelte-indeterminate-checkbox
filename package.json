@@ -1,6 +1,6 @@
 {
   "name": "svelte-indeterminate-checkbox",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
@@ -44,7 +44,7 @@
     "src",
     "dist"
   ],
-  "description": "*Psst — looking for an app template? Go here --> [sveltejs/template](https://github.com/sveltejs/template)*",
+  "description": "Simple checkbox component with \"indeterminate\" status ",
   "directories": {
     "test": "test"
   },
